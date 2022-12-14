@@ -1,0 +1,12 @@
+<div class='container'>
+<p style="color: green"><%= notice %></p>
+
+<%= render @customer %>
+
+<div>
+
+  <button class='btn btn-success'><%= link_to "Quay lại", customers_path %></button>
+  <%= button_to "Xóa", @customer, method: :delete, class:'btn btn-success mt-10' %>
+
+</div>
+</div>

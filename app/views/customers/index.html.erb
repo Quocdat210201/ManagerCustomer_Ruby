@@ -1,0 +1,38 @@
+
+<div class='container'>
+  <p style="color: green"><%= notice %></p>
+
+  <h1 class='title'>Quản lí khách hàng</h1>
+
+  <table class="table table-bordered table-striped">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">STT</th>
+        <th scope="col">Họ và tên</th>
+        <th scope="col">Giới tính</th>
+        <th scope="col">Địa chỉ</th>
+        <th colspan="3">Chức năng</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <div id="customers">
+        <% @customers.each do |customer| %>
+          <tr>
+            <td><%= customer.stt %></td>
+            <td><%= customer.ten %></td>
+            <td><%= customer.gioitinh %></td>
+            <td><%= customer.diachi %></td>
+            <td><button class='btn btn-success'><%= link_to 'Xem', customer %></button></td>
+            <td><button class='btn btn-success'><%= link_to 'Sửa', edit_customer_path(customer) %></button></td>
+            <td><button class='btn btn-success'><%= link_to 'Xóa', customer, method: :delete, data: { confirm: "Are you sure?" } %></button></td>
+            
+          </tr>
+        <% end %>
+      </div>
+    </tbody>
+  </table>
+  <button class='btn btn-success'>
+    <%= link_to "Thêm mới", new_customer_path %>
+  </button>
+</div>

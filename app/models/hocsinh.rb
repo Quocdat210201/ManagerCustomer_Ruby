@@ -1,0 +1,2 @@
+class Hocsinh < ApplicationRecord
+end
