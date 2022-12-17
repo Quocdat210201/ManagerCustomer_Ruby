@@ -1,0 +1,45 @@
+
+<%= render 'layouts/header' %>
+<div class='container'>
+  <p style="color: green"><%= notice %></p>
+
+  <h1 class='title'>Quản lí cây thuốc nam</h1>
+
+  <table class="table table-bordered table-striped">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">STT</th>
+        <th scope="col">Tên</th>
+        <th scope="col">Đặc điểm</th>
+        <th scope="col">Màu lá</th>
+        <th scope="col">Dược tính</th>
+        <th scope="col">Lưu ý sử dụng</th>
+        <th scope="col">Nơi trồng</th>
+        <th colspan="3">Chức năng</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <div id="thuocnams">
+        <% @thuocnams.each do |thuocnam| %>
+          <tr>
+            <td><%= thuocnam.stt %></td>
+            <td><%= thuocnam.ten %></td>
+            <td><%= thuocnam.dacdiem %></td>
+            <td><%= thuocnam.maula %></td>
+            <td><%= thuocnam.duoctinh %></td>
+            <td><%= thuocnam.luuysudung %></td>
+            <td><%= thuocnam.noitrong %></td>
+            <td><button class='btn btn-success'><%= link_to 'Xem', thuocnam %></button></td>
+            <td><button class='btn btn-success'><%= link_to 'Sửa', edit_thuocnam_path(thuocnam) %></button></td>
+            <td><button class='btn btn-success'><%= link_to 'Xóa', thuocnam, method: :delete %></button></td>
+            
+          </tr>
+        <% end %>
+      </div>
+    </tbody>
+  </table>
+  <button class='btn btn-success'>
+    <%= link_to "Thêm mới", new_thuocnam_path %>
+  </button>
+</div>

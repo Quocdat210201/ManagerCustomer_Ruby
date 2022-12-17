@@ -1,0 +1,52 @@
+<%= form_with(model: thuocnam) do |form| %>
+  <% if thuocnam.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(thuocnam.errors.count, "error") %> prohibited this thuocnam from being saved:</h2>
+
+      <ul>
+        <% thuocnam.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :stt, style: "display: block" %>
+    <%= form.number_field :stt %>
+  </div>
+
+  <div>
+    <%= form.label :ten, style: "display: block" %>
+    <%= form.text_field :ten %>
+  </div>
+
+  <div>
+    <%= form.label :dacdiem, style: "display: block" %>
+    <%= form.number_field :dacdiem %>
+  </div>
+
+  <div>
+    <%= form.label :maula, style: "display: block" %>
+    <%= form.text_field :maula %>
+  </div>
+
+  <div>
+    <%= form.label :duoctinh, style: "display: block" %>
+    <%= form.text_field :duoctinh %>
+  </div>
+
+  <div>
+    <%= form.label :luuysudung, style: "display: block" %>
+    <%= form.text_field :luuysudung %>
+  </div>
+
+  <div>
+    <%= form.label :noitrong, style: "display: block" %>
+    <%= form.text_field :noitrong %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

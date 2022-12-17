@@ -27,7 +27,7 @@ class CustomersController < ApplicationController
 
     respond_to do |format|
       if @customer.save
-        format.html { redirect_to customer_url(@customer), notice: "Customer was successfully created." }
+        format.html { redirect_to customer_url(@customer), notice: "Thêm mới thành công!" }
         format.json { render :show, status: :created, location: @customer }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +40,7 @@ class CustomersController < ApplicationController
   def update
     respond_to do |format|
       if @customer.update(customer_params)
-        format.html { redirect_to customer_url(@customer), notice: "Customer was successfully updated." }
+        format.html { redirect_to customer_url(@customer), notice: "Cập nhật thành công!" }
         format.json { render :show, status: :ok, location: @customer }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,10 +51,10 @@ class CustomersController < ApplicationController
 
   # DELETE /customers/1 or /customers/1.json
   def destroy
-    @customer.destroy
+    @customer.destro
 
     respond_to do |format|
-      format.html { redirect_to customers_url, notice: "Customer was successfully destroyed." }
+      format.html { redirect_to customers_url, notice: "Xóa thành công!" }
       format.json { head :no_content }
     end
   end
@@ -67,6 +67,6 @@ class CustomersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def customer_params
-      params.require(:customer).permit(:term)
+      params.require(:customer).permit(:term ,:stt,:ten,:gioitinh, :diachi)
     end
 end

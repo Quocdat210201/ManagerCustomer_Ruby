@@ -1,0 +1,16 @@
+
+
+
+<%= render 'layouts/header' %>
+<div class='container'>
+<p style="color: green"><%= notice %></p>
+
+<%= render @thuocnam %>
+
+<div>
+
+  <button class='btn btn-success'><%= link_to "Quay lại", thuocnams_path %></button>
+  <%= button_to "Xóa", @thuocnam , method: :delete, class:'btn btn-success mt-10' %>
+
+</div>
+</div>

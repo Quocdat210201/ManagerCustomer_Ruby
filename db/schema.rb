@@ -10,12 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_04_080015) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_17_021539) do
   create_table "customers", charset: "utf8", collation: "utf8_unicode_ci", force: :cascade do |t|
     t.integer "stt"
     t.string "ten"
     t.string "gioitinh"
     t.string "diachi"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "thuocnams", charset: "utf8", collation: "utf8_unicode_ci", force: :cascade do |t|
+    t.integer "stt"
+    t.string "ten"
+    t.integer "dacdiem"
+    t.string "maula"
+    t.string "duoctinh"
+    t.string "luuysudung"
+    t.string "noitrong"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

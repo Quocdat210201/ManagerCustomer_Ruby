@@ -1,0 +1,14 @@
+
+
+<%= render 'layouts/header' %>
+<div class='container'>
+<h1 class='mt-20'>Thêm mới</h1>
+
+<%= render "form", thuocnam: @thuocnam %>
+
+<br>
+
+<div>
+  <button class='btn btn-success'> <%= link_to "Quay lại", thuocnams_path %></button>
+</div>
+</div>

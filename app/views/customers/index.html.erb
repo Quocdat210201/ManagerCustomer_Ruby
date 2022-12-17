@@ -25,7 +25,7 @@
             <td><%= customer.diachi %></td>
             <td><button class='btn btn-success'><%= link_to 'Xem', customer %></button></td>
             <td><button class='btn btn-success'><%= link_to 'Sửa', edit_customer_path(customer) %></button></td>
-            <td><button class='btn btn-success'><%= link_to 'Xóa', customer, method: :delete, data: { confirm: "Are you sure?" } %></button></td>
+            <td><button class='btn btn-success'><%= link_to 'Xóa', customer, method: :delete %></button></td>
             
           </tr>
         <% end %>

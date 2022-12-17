@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  resources :thuocnams
   resources :customers
-  root to: 'customers#index'
+  root to: 'thuocnams#index'
   devise_for :users
 
   devise_scope :user do  
